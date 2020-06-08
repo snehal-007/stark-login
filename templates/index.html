@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %} Index{% endblock title %}
+
+{% block css %} 
+
+.logo{
+    height:198px;
+    width:291px;
+
+    position: relative;
+    float: right;
+    margin-right: 70%;
+    margin-top: 3px;
+    z-index: 999;
+   
+    <!-- margin-left: 440px;
+    margin-top:10px -->
+    <!-- margin:260px; -->  
+}
+
+
+{% endblock %}
+
+
+{% block body %}
+<div>
+<img src="static/cool.jpg" class="logo" alt="image error">
+</div>
+<div class="container my-5">
+    
+  <form action="/" method="post">
+    {% csrf_token %}
+    <h5>Please Login to Enter in Stark Industries</h5>
+    <div class="form-group my-3">
+          <label for="login_email">Email address</label>
+          <input type="email" class="form-control" id="login_email" name="login_email" aria-describedby="emailHelp" style="width: 300px;">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="login_password">Password</label>
+          <input type="password" class="form-control" id="login_password" name="login_password" style="width: 300px;">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <li class="item">Don't have an account?<a href="/signup">Register</a></li>
+        
+      </form>
+    
+
+</div>
+
+
+{% endblock body %}
