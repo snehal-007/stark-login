@@ -47,10 +47,12 @@ def index(request):
     # return HttpResponse("Thats home")
 
 def about(request):
-    return render(request,"about.html")
+    return HttpResponse("About Page")
+    # return render(request,"about.html")
 
 def contact(request):
-    return render(request,"contact.html")  
+    return HttpResponse("Thats Contact")
+    # return render(request,"contact.html")  
 
 
 # signup
@@ -111,6 +113,12 @@ def signup(request):
         if password != conf_password:
             messages.error(request,"Your password is not match please check again")
             return render(request,"signup.html")
+
+        if len(password) < 5:
+
+            messages.error(request,"Your password is too short")
+            return render(request,"signup.html")
+
 
         if check == "1":
 
