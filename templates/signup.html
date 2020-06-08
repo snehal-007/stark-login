@@ -29,7 +29,7 @@
 <img src="static/cool.jpg" class="logo" alt="image error">
 </div>
 <div class="container my-1">
-  <form action="/signup" method="post">
+  <form action="/signup" method="post" enctype="multipart/form-data">
   {% csrf_token %}
     <h5>Sign up with Stark Industries</h5>
     <div class="form-row">

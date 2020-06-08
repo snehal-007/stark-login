@@ -14,7 +14,7 @@ class Signin(models.Model):
     address_2 = models.CharField(max_length=300)
     city=models.CharField(max_length=50)
     date = models.DateField(auto_now_add=True)
-    image = models.FileField(upload_to='media/', default="")
+    image = models.ImageField(upload_to='media')
 
     def __str__(self):
         return "Account username:-"  +  self.u_name

@@ -66,7 +66,7 @@ def signup(request):
         address_1 = request.POST.get('address1','')
         address_2 = request.POST.get('address2','')
         city = request.POST.get('city','')
-        img = request.POST.get('filename','')
+        img = request.FILES['filename']
         
         check = request.POST.get('gridCheck','')
 
