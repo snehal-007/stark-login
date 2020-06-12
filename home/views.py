@@ -12,6 +12,7 @@ def index(request):
         # Fetch data from Database
         login = Signin.objects.filter(email = loginemail,password = loginpassword)
 
+        #collect data as a dictionary
         update = []
 
         try:

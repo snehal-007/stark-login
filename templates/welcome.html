@@ -5,23 +5,22 @@
 {% block css %} 
 
 .logo{
-    height:198px;
-    width:291px;
 
-    position: relative;
-    float: right;
-    margin-right: 70%;
-    margin-top: 3px;
-    z-index: 999;
-   
-    <!-- margin-left: 440px;
-    margin-top:10px -->
-    <!-- margin:260px; -->  
+  height:250px;
+  width:250px;
+  margin-left:500px;
+  margin-top:33px;
 }
 
-.btn btn-primary btn-lg active{
+#logout_btn{
     margin-right: 50%;
     margin-top: 3px;
+}
+
+#profile_img{
+  margin-left:60%;
+  height:300px;
+  width:300px;
 }
 
 
@@ -36,8 +35,8 @@
 
   <h1>Welcome to Stark Industries</h1> 
     
-  <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
-  <div class="card align-items-center" style="width: 18rem;">
+  <a href="/" id="logout_btn" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
+  <div class="card align-items-center" id="profile_img" style="width: 18rem;">
     <img src='/media/{{Image}}' class="card-img-top" alt="...">
     
 </div>
