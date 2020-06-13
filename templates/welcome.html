@@ -9,12 +9,12 @@
   height:250px;
   width:250px;
   margin-left:500px;
-  margin-top:33px;
+  margin-top:-36px;
 }
 
 #logout_btn{
-    margin-right: 50%;
-    margin-top: 3px;
+    margin-left: 92%;
+    margin-top: 5px;
 }
 
 #profile_img{
@@ -28,18 +28,19 @@
 
 
 {% block body %}
+
 <div>
-<img src="static/cool.jpg" class="logo" alt="image error">
+  <a href="/" id="logout_btn" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
+  <img src="static/cool.jpg" class="logo" alt="image error">
 </div>
 <div class="container my-5">
-
-  <h1>Welcome to Stark Industries</h1> 
+  <h1>Welcome to Stark Industries </h1> 
+  
     
-  <a href="/" id="logout_btn" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Logout</a>
   <div class="card align-items-center" id="profile_img" style="width: 18rem;">
     <img src='/media/{{Image}}' class="card-img-top" alt="...">
-    
-</div>
+  </div>
+  <hr>
     <h5>Profile made of The Date:-{{Date}}</h5>
   <h5>Full Name :-{{Full_Name}}</h5>
   <h5>Username :-{{Username}}</h5>

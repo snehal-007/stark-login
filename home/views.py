@@ -55,6 +55,10 @@ def contact(request):
     return HttpResponse("Thats Contact")
     # return render(request,"contact.html")  
 
+# def welcome(request):
+
+#     return render(request,"welcome.html")
+
 
 # signup
 def signup(request):
