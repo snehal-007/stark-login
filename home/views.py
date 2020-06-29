@@ -1,4 +1,4 @@
-from django.shortcuts import render ,HttpResponse
+from django.shortcuts import render ,HttpResponse,redirect
 from django.contrib import messages
 from home.models import Signin
 
@@ -13,6 +13,7 @@ def index(request):
         login = Signin.objects.filter(email = loginemail,password = loginpassword)
 
         #collect data as a dictionary
+        global update 
         update = []
 
         try:
@@ -31,11 +32,15 @@ def index(request):
                 return render(request,"index.html") 
 
             else:
+                global my_data
                 print("Login sucess") 
                 messages.success(request,"Login success...")
-
+                
                 params = profile_values
-                return render(request,"welcome.html",params)  
+
+                my_data = params
+                # return render(request,"welcome.html",params)
+                return redirect('Welcome')
 
         except Exception as e:
             print("Login failed")
@@ -55,12 +60,29 @@ def contact(request):
     return HttpResponse("Thats Contact")
     # return render(request,"contact.html")  
 
-# def welcome(request):
 
-#     return render(request,"welcome.html")
+# Welcome page of user data
+def welcome(request):
+    global my_data
+    params = my_data
+    print("params in welcome",params)
 
+    # direct Endpoint(welcome endpoint) access is not authenticate
+    if len(params) > 0:
 
-# signup
+        return render(request,"welcome.html",params)
+
+    else:
+        return render(request,"index.html")    
+
+# Logout endpoint
+def logout(request):
+    my_data.clear()
+    print("mydata",my_data)
+    messages.success(request,"You are Successfully Logged Out")
+    return render(request,"index.html")    
+
+# signup Validations
 def signup(request):
     # to get info by Post Requests 
     if request.method == "POST":
